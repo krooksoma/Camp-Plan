@@ -1,25 +1,31 @@
 'use strict'
 
-const changeBackgroundEl = document.querySelector('body')
+const changeBackgroundEl = document.querySelector('#hero')
+const imgs = ['assets/img/Alaska.jpg', 'assets/img/GrandCanyon.jpg', 
+'assets/img/nPark.jpg', 'assets/img/Rockies.jpg', 'assets/img/Yosemite.jpg'];
 
-function changeBackground (){
+changeBackgroundEl.style.backgroundImage = `url(${imgs[0]})`;
 
 
-    let imgs = ["https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg","./assets/img/Alaska.jpg",
-     "./assets/img/GrandCanyon.jpg", "./assets/img/nPark", './assets/img/Rockies.jpg', './assets/img/Yosemite.jpg'];
+let i = 1;
 
-    let internalTimer = setInterval(()=>{
 
-        for(let i = 0; i < imgs.length;i++){
-            changeBackgroundEl.style.backgroundImage = imgs[i];
-            console.log('working here as well');
-        }
-        console.log("looping")
 
-    }, 5000);
 
+let internalTimer = setInterval(()=>{
     
+    if(i < 5){
+        changeBackgroundEl.style.backgroundImage = `url(${imgs[i]})`;
+        console.log(imgs[i]);
+        changeBackgroundEl.style.animationName = 'animate';
+        changeBackgroundEl.style.animationDuration = '3s';
+   
+    i++;
+    }else{
+        i = 0;
+    }
 
-}
 
-changeBackground();
+}, 7000);
+
+

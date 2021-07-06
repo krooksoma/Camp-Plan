@@ -1,0 +1,15 @@
+#hero{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    margin: 0 auto;
+    animation-name: 'animate';
+    animation-duration: 2s;
+}
+
+@keyframes animate{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
