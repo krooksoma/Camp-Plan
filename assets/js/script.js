@@ -7,10 +7,9 @@ $(document).ready(function () {
     const closeModalBtn = $('.close-modal'); //create btn on HTML inside modal to close modal
     const overlay = $('.overlay'); //create overlay inside HTML
     const npsKey = 'h6tXDWnmFLuDQHAPIhnXzQKP5pBX66EKu0vrNdFn';
-    const searchInput = $('#searchBar');
+    let searchInput = $('#searchBar');
     const searchSubmit = $('#input-field');
-   
-
+  
     const imgs = ['assets/img/Alaska.jpg', 'assets/img/GrandCanyon.jpg',
         'assets/img/nPark.jpg', 'assets/img/Rockies.jpg', 'assets/img/Yosemite.jpg'];
 
@@ -70,20 +69,27 @@ $(document).ready(function () {
     //  put it inside function to call park info
     function fetchParkData(event){
         event.preventDefault();
-        console.log('inside');
-    fetch(`https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=${npsKey}`)
+        let currentSearch = searchInput.val();
+
+      
+    fetch(`https://developer.nps.gov/api/v1/parks?q=${currentSearch}&api_key=${npsKey}`)
         .then(function(response){
             return response.json();
         })
         .then(function (data){
             console.log(data);
         })
-
+        
         // search for specific park part
     }
 
 
     searchSubmit.submit(fetchParkData);
 
+    function displayData (){
+
+
+        
+    }
 
 });
