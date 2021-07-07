@@ -1,7 +1,7 @@
 :root{
     --dark: rgb(0,0,0);
     --primary: rgb(95, 74, 74);
-    --secondary: rgba(46, 92, 40, 0.87);
+    --secondary: rgba(46, 92, 40, 0.871);
     --tertiary: rgba(118, 160, 102, 0.9);
     --complimentary: rgba(214, 68, 31, 0.7);
 }
@@ -15,7 +15,7 @@ body {
 }
 
 header{
-    background-color: var(--secondary);
+    background-color: var(--dark);
     height: auto;
     display: block;
     position: relative;
