@@ -18,7 +18,7 @@ $(document).ready(function () {
     var timerOut = setTimeout(() => {
         changeBackgroundEl.fadeOut(1000, $);
 
-    }, 6000)
+    }, 7000)
 
     // call recallTimer every 7 sec
 
@@ -37,19 +37,19 @@ $(document).ready(function () {
             var timerOut = setTimeout(() => {
                 changeBackgroundEl.fadeOut(1000, $);
 
-            }, 6000)
+            }, 7000)
             // else to resets index value.
         } else{ i = 1 
             changeBackgroundEl.attr('src', `${imgs[0]}`).fadeIn(1000, $);
             var timerOut = setTimeout(() => {
                 changeBackgroundEl.fadeOut(1000, $);
 
-            }, 6000)
+            }, 7000)
         };
         console.log(i);
     }
-    
-    let internalTimer = setInterval(recallTimer, 7000);
+
+    let internalTimer = setInterval(recallTimer, 8000);
 
     function closeModal (){
         modal.addClass('hidden');
