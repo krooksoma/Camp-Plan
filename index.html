@@ -9,18 +9,17 @@
     <script src="https://kit.fontawesome.com/e4761db9e6.js" crossorigin="anonymous"></script>
     <title>Digital Camper</title>
 </head>
-<body class="#f0f4c3 lime lighten-4" id="body">
+<body>
     <!-- This will have the city search bar -->
-    <header class="section #27452F lighten-3 white-text" id="hero">
-        <h1><i class="fas fa-campground"></i>Digital Camper</h1>
+    <header class="nav-wrapper" id="top">
+        <h1 class=""><i class="fas fa-campground"></i>Digital Camper</h1>
     </header>
-    <img class="hero">
-    <div class="container col" id="input-field">
-        <h3>What city would you like to camp in?</h3>
-        <input type="text" class="row section #827717 lime darken-4 white-text " id="searchBar" />
-       
-    </div>
-</img>
+    <img class="hero"></img>
+    <form class="text-white" id="input-field">
+        <h3 id="searchPrompt">What state would you like to camp in?</h3>
+        <input type="text" class="white-text " id="searchBar" />
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
     <!-- main is a modal in case you want to do the whole bottom portion -->
     <!-- each piece is also a modal that will be shown when the main is shown -->
     <!-- This will ultimately allowfor hiding of the unit or just pieces-->
