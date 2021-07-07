@@ -10,9 +10,20 @@
     color: var(--dark);
 }
 
+body {
+    background-color: var(--secondary);
+}
+
 header{
     background-color: var(--secondary);
-    height: 15vh;
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+#top {
+    float: left;
+    background-color: var(--secondary);
 }
 
 .hero{
@@ -21,9 +32,31 @@ header{
     background-size: cover;
     height: 60vh;
     width: 100%;
-    margin: 0 auto;     
+    margin: 0 auto;
 }
 
+#input-field{
+    position: absolute;
+    top: 150px;
+    display: flex;
+    flex: 0 0 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#searchPrompt {
+    text-align: center;
+    flex: 0 0 100%;
+}
+
+#searchBar {
+    border: 1px solid var(--dark);
+    flex: 0 0 50%;
+}
+
+#submitButton {
+    height: 43px;
+}
 
 i{
     font-size: 120%;
@@ -45,13 +78,6 @@ h3{
 
 .hidden{
     display:none;
-}
-
-
-#input-field{
-    position:absolute;
-    bottom: 60vh;
-    left: 25vh;
 }
 
 
