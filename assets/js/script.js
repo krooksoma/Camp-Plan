@@ -2,8 +2,10 @@
 
 $(document).ready(function () {
 
-    let changeBackgroundEl = $('.hero');
-    let modal = $('modal');
+    const changeBackgroundEl = $('.hero');
+    const modal = $('modal');
+    const closeModalBtn = $('.close-modal'); //create btn on HTML inside modal to close modal
+    const overlay = $('.overlay'); //create overlay inside HTML
 
     const imgs = ['assets/img/Alaska.jpg', 'assets/img/GrandCanyon.jpg',
         'assets/img/nPark.jpg', 'assets/img/Rockies.jpg', 'assets/img/Yosemite.jpg'];
@@ -48,6 +50,12 @@ $(document).ready(function () {
     }
     let internalTimer = setInterval(recallTimer, 7000);
 
+    function closeModal (){
+        modal.addClass('hidden');
+        overlay.addClass('hidden');
+
+    }
+
     function revealModal(){
         modal.removeClass('.hidden');
         modal.addClass('modal-open');
@@ -55,11 +63,8 @@ $(document).ready(function () {
 
     }
 
-
-
-
-
-
+    overlay.click(closeModal);
+    closeModalBtn.click(closeModal);
 
     modal.click(revealModal());
 
