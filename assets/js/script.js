@@ -48,19 +48,17 @@ $(document).ready(function () {
         };
         console.log(i);
     }
+    
     let internalTimer = setInterval(recallTimer, 7000);
 
     function closeModal (){
         modal.addClass('hidden');
         overlay.addClass('hidden');
-
     }
 
     function revealModal(){
         modal.removeClass('.hidden');
         modal.addClass('modal-open');
-
-
     }
 
     overlay.click(closeModal);
