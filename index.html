@@ -10,39 +10,41 @@
 </head>
 <body class="#f0f4c3 lime lighten-4 " id="body">
     <!-- This will have the city search bar -->
-    <header class="section #dce775 lime lighten-2 white-text center-align" id="top">
+    <header class="section #27452F green lighten-3 white-text center-align" id="hero">
         <h1>Digital Camper</h1>
         <div class="container offset-s3">
-            <p class="green-text">What city would you like to camp in?</p>
+            <p class="">What city would you like to camp in?</p>
             <input type="text" class="section #827717 lime darken-4 white-text " id="searchBar" />
         </div>
     </header>
-    <div id="hero"></div>
     
-    <main class="row section">
+    <!-- main is a modal in caase you want to do the whole bottom portion -->
+    <!-- each piece is also a modal that will be shown when the main is shown -->
+    <!-- This will ultimately allowfor hiding of the unit or just pieces-->
+    <main class="modal row section">
         <!-- This section will contain necessary info about parks (waeahter and list) -->
         <div class="container col s6 #dce775 lime lighten-2">
             <!-- This will show parks in the city -->
-            <div class="container col s6 #dce775 lime lighten-2" id="parkList">
+            <div class="modal-open col s6" id="parkList">
                 <h3>Parks</h3>
             </div>
             <!-- This will show weather data in the park -->
-            <div class="col s6 #dce775 lime lighten-2" id="aboutWeather">
+            <div class="modal-open col s6" id="aboutWeather">
                 <h3>Weather</h3>
             </div>
         </div>
         <!-- This is the info about the park -->
         <div class="col s5 #dce775 lime lighten-2" id="aboutPark">
             <!-- This will show activities in the park -->
-            <div id="aboutActivities">
+            <div class="modal-open" id="aboutActivities">
                 <h3>Activities</h3>
             </div>
             <!-- This will showgear to take -->
-            <div id="aboutGear">
+            <div class="modal-open" id="aboutGear">
                 <h3>Gear</h3>
             </div>
             <!-- This will show hours of the park -->
-            <div id="parkHours">
+            <div class="modal-open" id="parkHours">
                 <h3>Park Hours</h3>
             </div>
         </div>
