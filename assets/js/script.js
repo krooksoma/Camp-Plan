@@ -6,6 +6,8 @@ $(document).ready(function () {
     const modal = $('modal');
     const closeModalBtn = $('.close-modal'); //create btn on HTML inside modal to close modal
     const overlay = $('.overlay'); //create overlay inside HTML
+    const npsKey = 'h6tXDWnmFLuDQHAPIhnXzQKP5pBX66EKu0vrNdFn';
+   
 
     const imgs = ['assets/img/Alaska.jpg', 'assets/img/GrandCanyon.jpg',
         'assets/img/nPark.jpg', 'assets/img/Rockies.jpg', 'assets/img/Yosemite.jpg'];
@@ -24,15 +26,11 @@ $(document).ready(function () {
 
 
     const recallTimer = () => {
-        console.log(`index before change ${i}`);
+        
         if (i < 5 ) {
             // fades in new image
             changeBackgroundEl.attr('src', `${imgs[i]}`).fadeIn(1000, $);
-
-
             i++;
-            console.log(`index after change ${i}`);
-
             //  fades out the new image after 6 secs
             var timerOut = setTimeout(() => {
                 changeBackgroundEl.fadeOut(1000, $);
@@ -46,7 +44,7 @@ $(document).ready(function () {
 
             }, 7000)
         };
-        console.log(i);
+        
     }
 
     let internalTimer = setInterval(recallTimer, 8000);
@@ -65,5 +63,19 @@ $(document).ready(function () {
     closeModalBtn.click(closeModal);
 
     modal.click(revealModal());
+
+
+    //  put it inside function to call park info
+
+    fetch(`https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=${npsKey}`)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function (data){
+            console.log(data);
+        })
+
+
+
 
 });
