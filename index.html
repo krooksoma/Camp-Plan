@@ -11,21 +11,21 @@
 </head>
 <body>
     <!-- This will have the city search bar -->
-    <header class="nav-wrapper" id="top">
+    <header>
         <h1 class=""><i class="fas fa-campground"></i>Digital Camper</h1>
     </header>
     <img class="hero"></img>
     <form class="text-white" id="input-field">
-        <h3 id="searchPrompt">What state would you like to camp in?</h3>
+        <h3 id="searchPrompt">What park would you like to camp in?</h3>
         <input type="text" class="white-text " id="searchBar" />
         <button type="submit" id="submitButton">Submit</button>
     </form>
-    <!-- main is a modal in case you want to do the whole bottom portion -->
+    <!-- main is  a modal in case you want to do the whole bottom portion -->
     <!-- each piece is also a modal that will be shown when the main is shown -->
     <!-- This will ultimately allowfor hiding of the unit or just pieces-->
     <main class="modal row section">
         <!-- This section will contain necessary info about parks (waeahter and list) -->
-        <div class="container col s6 #dce775 lime lighten-2">
+        <div class="container col s6">
             <!-- This will show parks in the city -->
             <div class="modal-open col s6" id="parkList">
                 <h3>Parks</h3>
@@ -36,7 +36,7 @@
             </div>
         </div>
         <!-- This is the info about the park -->
-        <div class="col s5 #dce775 lime lighten-2" id="aboutPark">
+        <div class="col s5" id="aboutPark">
             <!-- This will show activities in the park -->
             <div class="modal-open" id="aboutActivities">
                 <h3>Activities</h3>

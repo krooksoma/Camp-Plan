@@ -1,7 +1,7 @@
 :root{
     --dark: rgb(0,0,0);
     --primary: rgb(95, 74, 74);
-    --secondary: rgba(46, 92, 40, 0.87);
+    --secondary: rgba(46, 92, 40, 0.871);
     --tertiary: rgba(118, 160, 102, 0.9);
     --complimentary: rgba(214, 68, 31, 0.7);
 }
@@ -11,21 +11,15 @@
 }
 
 body {
-    background-color: var(--secondary);
+    background-color: var(--tertiary);
 }
 
 header{
     background-color: var(--secondary);
-    height: auto;
-    display: block;
+    display: flex;
+    flex: 0 0 100%;
     position: relative;
 }
-
-#top {
-    float: left;
-    background-color: var(--secondary);
-}
-
 
 .hero{
     background-position: center;
@@ -52,11 +46,20 @@ header{
 
 #searchBar {
     border: 1px solid var(--dark);
+    background-color: var(--tertiary);
     flex: 0 0 50%;
 }
 
 #submitButton {
-    height: 43px;
+    height: 44px;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    border: var(--secondary);
+}
+
+#submitButton:hover {
+    background-color: var(--secondary);
+    color: var(--tertiary);
 }
 
 i{
