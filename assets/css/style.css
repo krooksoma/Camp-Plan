@@ -1,9 +1,11 @@
 :root{
     --dark: rgb(0,0,0);
-    --primary: rgb(95, 74, 74);
-    --secondary: rgba(46, 92, 40, 0.871);
-    --tertiary: rgba(118, 160, 102, 0.9);
-    --complimentary: rgba(214, 68, 31, 0.7);    
+
+    --primary: rgb(102, 95, 95);
+    --secondary: rgba(78, 107, 74, 0.87);
+    --tertiary: rgba(158, 197, 143, 0.9);
+    --complimentary: rgba(214, 68, 31, 0.7);
+
 }
 
 *{    
@@ -11,32 +13,38 @@
 }
 
 
-   /*background-color: var(--secondary);*/
-
+body {
+    background-color: var(--primary);
+}
 
 header{
     background-color: var(--secondary);
-    display: flex;
-    flex: 0 0 100%;
-    position: relative;
+    height: auto;  
+    width: 100%;  
+
+
 }
 
 .hero{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
+    height: 80vh;
     width: 100%;
     margin: 0 auto;
 }
 
 #input-field{
     position: absolute;
-    top: 150px;
+    top: 160px;
+    width: 33%;
     display: flex;
     flex: 0 0 100%;
     flex-flow: row wrap;
     justify-content: center;
+
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+=======
 }
 
 #searchPrompt {
@@ -80,47 +88,49 @@ h3{
     font-weight: bold;
 }
 
+li{
+    list-style-type: none;
+}
+
+#searchPrompt {
+    text-align: center;
+    flex: 0 0 100%;
+}
+
+#searchBar {
+    border: 1px solid var(--dark);
+    flex: 0 0 50%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
+#submitButton {
+    height: 40px;
+    width: 70px;
+    text-align: start;
+    font-weight: bold;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
 .hidden{
     display:none;
 }
 
-
-
-/* classes for modal */
-
-.overlay {
-    position: absolute; /* absolute position on the screen */
-    top: 0;
-    left: 0;
-    width: 100%; /* will set the overlay on the whole webpage */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    z-index: 5; /*in front of webpage but behind modal */
-}
-
-.modal {
+/* #park-list{    
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;  
-    background-color: white;
-    padding: 6rem;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    bottom: 50px;
+} */
+
+.custom-card{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
-.modalWeather {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;  
-    background-color: var(--textwhite);
-    padding: 6rem;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
+
+.custom-button{
+    background: var(--complimentary);
+    font-weight: bold;
 }
-  
+
+.custom-button:hover {
+    background-color: var(--secondary);
+}
+
+

@@ -11,15 +11,17 @@
 </head>
 <body>
     <!-- This will have the city search bar -->
-    <header>
-        <h1 class=""><i class="fas fa-campground"></i>Digital Camper</h1>
+
+    <header class="nav-wrapper" id="top">
+        <h1 ><i class="fas fa-campground"></i>Digital Camper</h1>
+
     </header>
     <img class="hero"></img>
     <form class="text-white" id="input-field">
 
         <h3 id="searchPrompt">What state would you like to camp in?</h3>
-        <input type="text" class="white-text" id="searchBar" />
 
+        <input type="text" class="white-text " id="searchBar" placeholder="search"/>
 
         <button type="submit" id="submitButton">Submit</button>
         <!-- Modal Trigger -->
@@ -29,37 +31,12 @@
     <!-- main is  a modal in case you want to do the whole bottom portion -->
     <!-- each piece is also a modal that will be shown when the main is shown -->
     <!-- This will ultimately allowfor hiding of the unit or just pieces-->
-    <main class="modal row section">
-        <!-- This section will contain necessary info about parks (waeahter and list) -->
-        <div class="container col s6">
-            <!-- This will show parks in the city -->
-            <div class="modal-open col s6" id="parkList">
-                <h3>Parks</h3>
-            </div>
-            <!-- This will show weather data in the park -->
-            <div class="modal-open col s6" id="aboutWeather">
-                <h3>Weather</h3>
-            <!--Soon Show the Info about the Park show botton for Weather-->
-		</div>
-        </div>
-        <!-- This is the info about the park -->
-        <div class="col s5" id="aboutPark">
-            <!-- This will show activities in the park -->
-            <div class="modal-open" id="aboutActivities">
-                <h3>Activities</h3>
-            </div>
-            <!-- This will showgear to take -->
-            <div class="modal-open" id="aboutGear">
-                <h3>Gear</h3>
-            </div>
-            <!-- This will show hours of the park -->
-            <div class="modal-open" id="parkHours">
-                <h3>Park Hours</h3>
-            </div>
-        </div>
-        
+
+    <main class="container col " id="park-list">
+
     </main>
-    <div class="overlay hidden"></div>
+    
+    
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
