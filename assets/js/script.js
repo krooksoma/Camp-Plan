@@ -83,7 +83,11 @@ $(document).ready(function ()
                 console.log("City:", data.data[10].addresses[0].city); //test line
                 console.log("Park:", data.data[10].name);//test line
                 console.log("State:",data.data[10].addresses[0].stateCode);//test line
+                const searchInput = data.data[10].name;
+
+            console.log("new:",searchInput);
             })
+            
             // look for cities
          //for (var i = 0; i < data.data.length; i += 25)
     };
