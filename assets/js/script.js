@@ -90,20 +90,30 @@ $(document).ready(function () {
         let parkList = $('#park-list');
         // create div for the column and attach to the main div container
         let item = document.createElement('div');
-        item.classList.add('col');
+        item.classList.add('col', 'card', 'custom-card');
         parkList.append(item);
+
+        // div to add the card to
+        let cardContent = document.createElement('div');
+        cardContent.classList.add('card-content');
+        item.append(cardContent);
 
         // create card for each park and attach to park list div
         let itemCard = document.createElement('div');
-        itemCard.classList.add('card-panel');
+        itemCard.classList.add('card-title');
         itemCard.textContent = parkName;
-        item.append(itemCard);
+        cardContent.append(itemCard);
+
+        // card-action div
+        let cardAction = document.createElement('div');
+        cardAction.classList.add('card-action');
+        cardContent.append(cardAction);
 
         //create button for each city and attach it to the park name
         let infoBtn = document.createElement('button');
-        infoBtn.classList.add('show-modal');
+        infoBtn.classList.add('show-modal', 'custom-button');
         infoBtn.textContent = 'More Info';
-        item.append(infoBtn);
+        cardContent.append(infoBtn);
 
         // getting activities for each park
 
@@ -113,27 +123,27 @@ $(document).ready(function () {
             // console.log(activities);
             // creating a div and adding a list to it with each activity
             let listActivities = document.createElement('div');
-            listActivities.classList.add('hidden');
+            listActivities.classList.add('custom-modal', 'hidden');
             // gets activitites from APi and add to the div
-            activitiesHere.append(listActivities);
+            cardContent.append(listActivities);
 
             for (let i = 0; i < activities.length; i++) {
-                let parkActivities = activities[i].name;
-                
+                let parkActivities = activities[i].name;    
                 
                 let newActivity = document.createElement('li');
                 newActivity.textContent = parkActivities;
                 listActivities.append(newActivity);
-                item.append(listActivities);
+                
             }
             
         })
-        // console.log(infoBtn.value)
+       
     }
 
     $(document).on("click", ".show-modal", function(e){
         console.log('click, click, clicking ®️Dan');
         e.target.nextSibling.classList.toggle('hidden');
+        
     })
 
 
