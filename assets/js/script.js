@@ -1,6 +1,5 @@
-'use strict'
-
-$(document).ready(function () {
+$(document).ready(function () 
+{
 
     const changeBackgroundEl = $('.hero');
     const modal = $('.modal');
@@ -12,9 +11,12 @@ $(document).ready(function () {
 
     const searchInput = $('#searchBar');
     const searchSubmit = $('#input-field');
+
     const parkList = $('#park-list');
     let activitiesHere = $('#display-more-info')
     let parkName;
+
+
 
     const imgs = ['assets/img/Alaska.jpg', 'assets/img/GrandCanyon.jpg',
         'assets/img/nPark.jpg', 'assets/img/Rockies.jpg', 'assets/img/Yosemite.jpg'];
@@ -58,27 +60,36 @@ $(document).ready(function () {
     let internalTimer = setInterval(recallTimer, 8000);
 
 
-    //  put it inside function to call park info
-    function fetchParkData(event) {
+     //  put it inside function to call park info
+    function fetchParkData(event){
         event.preventDefault();
-        let currentSearch = searchInput.val();
+        console.log('inside of Array'); //test line
 
 
-        fetch(`https://developer.nps.gov/api/v1/parks?q=${currentSearch}&api_key=${npsKey}`)
-            .then(function (response) {
-                return response.json();
+        fetch(`https://developer.nps.gov/api/v1/parks?q=stateCode=FL,GA,CA,IL&limit=25&api_key=${npsKey}`)
+            .then(function (response){
+            console.log(response); //test line
+            return response.json();
+            }
+            )
+            .then(function (data){
+                               
+                console.log("City:", data.data[10].addresses[0].city); //test line
+                console.log("Park:", data.data[10].name);//test line
+                console.log("State:",data.data[10].addresses[0].stateCode);//test line
+                const searchInput = data.data[10].name;
+
+            console.log("new:",searchInput);
+                data.data.forEach(displayData);
             })
-            .then(function (data) {
-
-                // calling each park name
-                data.data.forEach(displayData)
-
-            })
-        // search for specific park part
-    }
-
-
+            
+            // look for cities
+         //for (var i = 0; i < data.data.length; i += 25)
+    };
+    // search for specific park part
+    searchInput.submit(fetchParkData);
     searchSubmit.submit(fetchParkData);
+
 
 
     // display data acquired from API
@@ -149,3 +160,5 @@ $(document).ready(function () {
 
 
 });
+
+

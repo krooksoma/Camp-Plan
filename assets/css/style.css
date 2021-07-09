@@ -1,14 +1,17 @@
 :root{
     --dark: rgb(0,0,0);
+
     --primary: rgb(102, 95, 95);
     --secondary: rgba(78, 107, 74, 0.87);
     --tertiary: rgba(158, 197, 143, 0.9);
     --complimentary: rgba(214, 68, 31, 0.7);
+
 }
 
 *{    
     color: var(--dark);
 }
+
 
 body {
     background-color: var(--primary);
@@ -18,13 +21,9 @@ header{
     background-color: var(--secondary);
     height: auto;  
     width: 100%;  
-}
 
-#top {
-    float: left;
-    background-color: var(--secondary);
-}
 
+}
 
 .hero{
     background-position: center;
@@ -43,7 +42,32 @@ header{
     flex: 0 0 100%;
     flex-flow: row wrap;
     justify-content: center;
+
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+=======
+}
+
+#searchPrompt {
+    text-align: center;
+    flex: 0 0 100%;
+}
+
+#searchBar {
+    border: 1px solid var(--dark);
+    background-color: var(--tertiary);
+    flex: 0 0 50%;
+}
+
+#submitButton {
+
+    height: 47px;
+    text-align: center;
+    padding: 1%;
+}
+#submitButton:hover {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+
 }
 
 i{
@@ -108,4 +132,5 @@ li{
 .custom-button:hover {
     background-color: var(--secondary);
 }
+
 
