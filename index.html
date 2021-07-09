@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,10 @@
     <img class="hero"></img>
     <form class="text-white" id="input-field">
         <h3 id="searchPrompt">What state would you like to camp in?</h3>
-        <input type="text" class="white-text " id="searchBar" />
+        <input type="text" class="white-text" id="searchBar" />
         <button type="submit" id="submitButton">Submit</button>
+        <!-- Modal Trigger -->
+        <button data-target="modal1" class="btn modal-trigger">Weather</button>
     </form>
     <!-- main is a modal in case you want to do the whole bottom portion -->
     <!-- each piece is also a modal that will be shown when the main is shown -->
@@ -33,7 +35,8 @@
             <!-- This will show weather data in the park -->
             <div class="modal-open col s6" id="aboutWeather">
                 <h3>Weather</h3>
-            </div>
+            <!--Soon Show the Info about the Park show botton for Weather-->
+		</div>
         </div>
         <!-- This is the info about the park -->
         <div class="col s5 #dce775 lime lighten-2" id="aboutPark">
@@ -50,6 +53,7 @@
                 <h3>Park Hours</h3>
             </div>
         </div>
+        
     </main>
     <div class="overlay hidden"></div>
     <script
