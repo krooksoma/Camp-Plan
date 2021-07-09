@@ -1,10 +1,10 @@
 :root{
     --dark: rgb(0,0,0);
-
-    --primary: rgb(102, 95, 95);
-    --secondary: rgba(78, 107, 74, 0.87);
-    --tertiary: rgba(158, 197, 143, 0.9);
-    --complimentary: rgba(214, 68, 31, 0.7);
+    --primary: #f2f2e9;
+    --secondary: #254b59;
+    --tertiary: #7b9ea6;
+    --complimentary: #8c593b;
+    --complimentary2: #593f2f;
 
 }
 
@@ -19,10 +19,10 @@ body {
 
 header{
     background-color: var(--secondary);
-    height: auto;  
-    width: 100%;  
-
-
+    height: 15vh;  
+    width: 100%;
+    align-items: center;
+    margin: 2 auto;
 }
 
 .hero{
@@ -44,7 +44,7 @@ header{
     justify-content: center;
 
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-=======
+
 }
 
 #searchPrompt {
@@ -64,19 +64,23 @@ header{
     text-align: center;
     padding: 1%;
 }
-#submitButton:hover {
-    background-color: var(--secondary);
-    color: var(--tertiary);
 
+#submitButton:hover {
+    background-color: var(--complimentary);
+    color: whitesmoke;
 }
 
 i{
-    font-size: 120%;
+    font-size: 200%;
     padding: 1rem;
+    position: relative;
+    bottom: 12px;
+    color: var(--primary);
 }
 
-h1{
-    font-size: 3.5rem;
+.h1-header{
+    font-size: 4rem;
+    margin: 0 auto;
 }
 
 h2{
