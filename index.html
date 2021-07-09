@@ -12,7 +12,7 @@
 <body>
     <!-- This will have the city search bar -->
     <header class="nav-wrapper" id="top">
-        <h1 class=""><i class="fas fa-campground"></i>Digital Camper</h1>
+        <h1 ><i class="fas fa-campground"></i>Digital Camper</h1>
     </header>
     <img class="hero"></img>
     <form class="text-white" id="input-field">
@@ -23,34 +23,9 @@
     <!-- main is a modal in case you want to do the whole bottom portion -->
     <!-- each piece is also a modal that will be shown when the main is shown -->
     <!-- This will ultimately allowfor hiding of the unit or just pieces-->
-    <main class="modal row section">
-        <!-- This section will contain necessary info about parks (waeahter and list) -->
-        <div class="container col s6 #dce775 lime lighten-2">
-            <!-- This will show parks in the city -->
-            <div class="modal-open col s6" id="parkList">
-                <h3>Parks</h3>
-            </div>
-            <!-- This will show weather data in the park -->
-            <div class="modal-open col s6" id="aboutWeather">
-                <h3>Weather</h3>
-            </div>
-        </div>
-        <!-- This is the info about the park -->
-        <div class="col s5 #dce775 lime lighten-2" id="aboutPark">
-            <!-- This will show activities in the park -->
-            <div class="modal-open" id="aboutActivities">
-                <h3>Activities</h3>
-            </div>
-            <!-- This will showgear to take -->
-            <div class="modal-open" id="aboutGear">
-                <h3>Gear</h3>
-            </div>
-            <!-- This will show hours of the park -->
-            <div class="modal-open" id="parkHours">
-                <h3>Park Hours</h3>
-            </div>
-        </div>
+    <main class="container row " id="park-list">
     </main>
+    <div class="new-info" id="display-more-info"></div>
     <div class="overlay hidden"></div>
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
