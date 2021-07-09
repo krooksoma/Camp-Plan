@@ -1,6 +1,5 @@
-'use strict'
-
-$(document).ready(function () {
+$(document).ready(function () 
+{
 
     const changeBackgroundEl = $('.hero');
     const modal = $('modal');
@@ -9,7 +8,8 @@ $(document).ready(function () {
     const npsKey = 'h6tXDWnmFLuDQHAPIhnXzQKP5pBX66EKu0vrNdFn';
     const searchInput = $('#searchBar');
     const searchSubmit = $('#input-field');
-   
+    const aboutSubmit = $('#aboutpark');
+    const parkList = $('#parkList');
 
     const imgs = ['assets/img/Alaska.jpg', 'assets/img/GrandCanyon.jpg',
         'assets/img/nPark.jpg', 'assets/img/Rockies.jpg', 'assets/img/Yosemite.jpg'];
@@ -28,8 +28,8 @@ $(document).ready(function () {
 
 
     const recallTimer = () => {
-        
-        if (i < 5 ) {
+
+        if (i < 5) {
             // fades in new image
             changeBackgroundEl.attr('src', `${imgs[i]}`).fadeIn(1000, $);
             i++;
@@ -39,24 +39,25 @@ $(document).ready(function () {
 
             }, 7000)
             // else to resets index value.
-        } else{ i = 1 
+        } else {
+            i = 1
             changeBackgroundEl.attr('src', `${imgs[0]}`).fadeIn(1000, $);
             var timerOut = setTimeout(() => {
                 changeBackgroundEl.fadeOut(1000, $);
 
             }, 7000)
         };
-        
+
     }
 
     let internalTimer = setInterval(recallTimer, 8000);
 
-    function closeModal (){
+    function closeModal() {
         modal.addClass('hidden');
         overlay.addClass('hidden');
     }
 
-    function revealModal(){
+    function revealModal() {
         modal.removeClass('.hidden');
         modal.addClass('modal-open');
     }
@@ -66,24 +67,32 @@ $(document).ready(function () {
 
     modal.click(revealModal());
 
-
     //  put it inside function to call park info
     function fetchParkData(event){
         event.preventDefault();
-        console.log('inside');
-    fetch(`https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=${npsKey}`)
-        .then(function(response){
+        console.log('inside of Array'); //test line
+
+        fetch(`https://developer.nps.gov/api/v1/parks?q=stateCode=FL,GA,CA,IL&limit=25&api_key=${npsKey}`)
+            .then(function (response){
+            console.log(response); //test line
             return response.json();
-        })
-        .then(function (data){
-            console.log(data);
-        })
+            }
+            )
+            .then(function (data){
+                               
+                console.log("City:", data.data[10].addresses[0].city); //test line
+                console.log("Park:", data.data[10].name);//test line
+                console.log("State:",data.data[10].addresses[0].stateCode);//test line
+                const searchInput = data.data[10].name;
 
-        // search for specific park part
-    }
-
-
+            console.log("new:",searchInput);
+            })
+            
+            // look for cities
+         //for (var i = 0; i < data.data.length; i += 25)
+    };
+    // search for specific park part
+    searchInput.submit(fetchParkData);
     searchSubmit.submit(fetchParkData);
-
-
 });
+   
