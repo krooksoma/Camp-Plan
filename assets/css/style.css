@@ -12,9 +12,18 @@
     color: var(--dark);
 }
 
+html{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 
 body {
     background-color: var(--primary);
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header{
@@ -22,7 +31,8 @@ header{
     height: 15vh;  
     width: 100%;
     align-items: center;
-    margin: 2 auto;
+    margin: 0;
+    padding: 0;
 }
 
 .hero{
@@ -32,6 +42,7 @@ header{
     height: 80vh;
     width: 100%;
     margin: 0 auto;
+    padding: 0;
 }
 
 #input-field{
@@ -44,7 +55,6 @@ header{
     justify-content: center;
 
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-
 }
 
 #searchPrompt {
@@ -64,10 +74,10 @@ header{
     text-align: center;
     padding: 1%;
 }
-
 #submitButton:hover {
-    background-color: var(--complimentary);
-    color: whitesmoke;
+    background-color: var(--secondary);
+    color: var(--tertiary);
+
 }
 
 i{
@@ -78,9 +88,9 @@ i{
     color: var(--primary);
 }
 
-.h1-header{
-    font-size: 4rem;
-    margin: 0 auto;
+h1{
+    font-size: 3.5rem;
+    margin: 0;
 }
 
 h2{
@@ -119,10 +129,6 @@ li{
     display:none;
 }
 
-/* #park-list{    
-    position: absolute;
-    bottom: 50px;
-} */
 
 .custom-card{
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
@@ -131,6 +137,8 @@ li{
 .custom-button{
     background: var(--complimentary);
     font-weight: bold;
+    max-height: 3rem;
+    width: 9rem;
 }
 
 .custom-button:hover {
@@ -138,3 +146,17 @@ li{
 }
 
 
+.card-img-top{
+    max-height: 25rem;  
+    max-width: 10rem;  
+}
+
+.card{
+    margin:0;
+    align-content: space-between;  
+    flex-wrap: nowrap;  
+}
+
+#custom-format{    
+    justify-content: space-between;
+}
