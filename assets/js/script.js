@@ -104,7 +104,7 @@ $(document).ready(function () {
         let itemCard = $("<h3>").addClass("card-title").text(parkName);
         item.append(itemCard);
         // card button
-        let infoBtn = $("<button>").addClass("show-modal custom-button").text("More Info");
+        let infoBtn = $("<button>").addClass("show-modal custom-button waves-effect waves-light btn").text("More Info");
         item.append(infoBtn);
 
         // div to add the card to
@@ -197,7 +197,8 @@ $(document).ready(function () {
        
 
         bigCardContent.append(rowCards);
-
+        
+        storeData(parkName);
         
     }
     $(document).on("click", ".show-modal", function (e) {
@@ -210,7 +211,8 @@ $(document).ready(function () {
 
     // remember to call it after everything is working
     function storeData(locStorage) {
-        let inputStorage = $("#searchInput").val().trim().toLowerCase();
+        console.log(locStorage);
+        let inputStorage = locStorage.toLowerCase();
         let containsCity = false;
         if (citiesArray != null) {
             $(citiesArray).each(function (x) {
