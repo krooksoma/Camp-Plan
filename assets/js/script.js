@@ -101,7 +101,7 @@ $(document).ready(function () {
         let item = $("<div>").addClass("col custom-card"); //change custom-card class on css later to container
         parkList.append(item);
         // card title
-        let itemCard = $("<div>").addClass("card-title").text(parkName);
+        let itemCard = $("<h3>").addClass("card-title").text(parkName);
         item.append(itemCard);
         // card button
         let infoBtn = $("<button>").addClass("show-modal custom-button").text("More Info");
@@ -121,9 +121,6 @@ $(document).ready(function () {
         
         // create card for each park and attach to park list div
       
-        //create button for each city and attach it to the park name
-
-
         $.getJSON(`https://developer.nps.gov/api/v1/parks?q=${parkName}&api_key=${npsKey}`, function (data) {
 
             let activities = data.data[0].activities;
