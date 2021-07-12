@@ -2,6 +2,7 @@
 $(document).ready(function () {
     
     let cityResultText = {};
+    const dropdownMenu = $("#dropdown1");
     
     let dayForecast = $("#row5day");
     let forecastDate = {};
@@ -170,7 +171,7 @@ $(document).ready(function () {
     
                     
     
-                    let newDivCard = $("<div>").addClass("card text-white bg-primary col").css({"max-width": "12rem"});
+                    let newDivCard = $("<div>").addClass("card text-white bg-primary col").css({"max-width": "auto"});
                     weatherCard.append(newDivCard);
     
                     let newCardBody = $("<div>").addClass("card-content");
@@ -209,7 +210,7 @@ $(document).ready(function () {
 
     
 
-    // remember to call it after everything is working
+    // sending searched data to local storage
     function storeData(locStorage) {
         console.log(locStorage);
         let inputStorage = locStorage.toLowerCase();
@@ -224,8 +225,33 @@ $(document).ready(function () {
         if (containsCity === false) {
             citiesArray.push(inputStorage);
         }
-        localStorage.setItem("Saved City", JSON.stringify(citiesArray));
-    }
+        localStorage.setItem("savedCity", JSON.stringify(citiesArray));
 
- 
+
+    }
+    // retrieving data from local storage to create dropdown list of previous searches
+    // function createDropDown (){
+    //     let newItem = JSON.parse(localStorage.getItem("savedCity"));
+    //     console.log(newItem);
+    //     console.log(typeof newItem);
+    //     if(localStorage.getItem("savedCity") != null){
+    //         for (let i = 0; i < newItem.length; i++){
+    //             let dropdownList = $("<li>")
+    //             let dropdownItem = $("<a>").attr("value", newItem[i].value);
+    //             dropdownItem.attr("href", "#!");
+    //             dropdownItem.text(newItem[i]);
+    //             dropdownList.append(dropdownItem);
+    //             dropdownMenu.append(dropdownList);
+
+    //     }
+
+    //     }
+    // }
+    // createDropDown()
+    // // $('.dropdown-trigger').dropdown();
+    
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     var elems = document.querySelectorAll('.dropdown-trigger');
+    //     var instances = M.Dropdown.init(elems, newItem);
+    //   });
 });
